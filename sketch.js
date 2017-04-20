@@ -1,5 +1,3 @@
-// ziying
-
 var x = 270;
 var y = 94;
 
@@ -19,6 +17,8 @@ function preload()
   rightarrow = loadImage('https://dl.dropbox.com/s/o0gthz4bg8yr6q2/rightarrow.png');
   
   keypad = loadImage('https://dl.dropbox.com/s/c8ibbfe9r272wfz/keypad.png');
+
+  bgConcrete = loadImage('https://dl.dropbox.com/s/iapilbrimy6kewl/bgConcrete.jpg');
 }
 
 function setup()
@@ -97,6 +97,8 @@ function canvas1()
 
 function canvas2()
 {
+  background(bgConcrete);
+
   if (access == 1 && mouseX > x+82*2 && mouseX < x+82*2+53 && mouseY > y+78*3 && mouseY < y+78*3+51 && mouseIsPressed == true)
   {
     text("UNLOCKED",50,100);
@@ -107,6 +109,18 @@ function canvas2()
     text("INCORRECT",50,100);
   }
   
+  fill(0,0,0);
+  rect(550,60,90,90);
+  rect(550,160,90,90);
+  rect(550,260,90,90);
+  rect(550,360,90,90);
+  
+  fill(255,255,255);
+  rect(560,70,70,70);
+  rect(560,170,70,70);
+  rect(560,270,70,70);
+  rect(560,370,70,70);
+  
   itemGrid();
   image(keypad,200,25,350,456);
   
@@ -114,7 +128,7 @@ function canvas2()
   
   if (value1 < 10)
   {
-    text(""+value1+"",50,50);
+    text(""+value1+"",575,100);
   }
   if (value2 < 10)
   {
